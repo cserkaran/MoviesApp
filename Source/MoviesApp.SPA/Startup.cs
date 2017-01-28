@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Owin;
-using Owin;
-
-[assembly: OwinStartup(typeof(MoviesApp.SPA.Startup))]
+﻿using Owin;
 
 namespace MoviesApp.SPA
 {
@@ -12,7 +6,6 @@ namespace MoviesApp.SPA
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
         }
     }
 }

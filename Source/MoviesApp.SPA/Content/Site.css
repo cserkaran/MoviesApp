@@ -34,3 +34,8 @@ textarea {
         padding: 10px 15px;
     }
 }
+
+.gridStyle {
+  width: 785px;
+  height: 400px;
+}

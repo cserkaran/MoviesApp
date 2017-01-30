@@ -1,4 +1,7 @@
-﻿public enum MovieDatabase
+﻿/// <summary>
+/// movie database source enum.
+/// </summary>
+public enum MovieDatabase
 {
     Cinema,
     Film

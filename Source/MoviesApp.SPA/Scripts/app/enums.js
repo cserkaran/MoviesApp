@@ -1,0 +1,1 @@
+﻿var movieDatabaseTypes = { "Cinema": "CinemaWorld", "Film": "FilmWorld" };

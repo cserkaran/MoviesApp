@@ -1,27 +1,29 @@
 ﻿"use strict";
 angular.module('moviesApp')
-.service('MovieService', function ($http, $q) {
+.service('MovieService', function ($http, $q, MoviesUrlService) {
     var self = this;
-    var cinemaMoviesDbUrl = "/api/" + movieDatabaseTypes.Cinema;
-    var filmMoviesDbUrl = "/api/" + movieDatabaseTypes.Film;
+   
     self.allMovies = [];
 
+    // get all the movies from multiple movie databases.
     self.getAllMovies = function () {
 
-        
-            var cinemaPromise = self.getMovies(cinemaMoviesDbUrl, movieDatabaseTypes.Cinema);
-            var filmWorldPromise = self.getMovies(filmMoviesDbUrl, movieDatabaseTypes.Film);
+        var movieUrls = MoviesUrlService.movieUrls();
+        var promises = [];
+        for (var i in movieUrls) {
+            var promise = self.getMovies(movieUrls[i].movieUrl, movieUrls[i].movieType);
+            promises.push(promise);
+        }
 
-            var promises = [cinemaPromise, filmWorldPromise];
-            return Promise.any(promises).then(function (result) {
-                // at least one of the API calls succeeded
-                return self.allMovies;
-            }, function () {
-                // none of the API calls succeeded
-            })
-        
-    }
+        return Promise.any(promises).then(function (result) {
+            // at least one of the API calls succeeded
+            return self.allMovies;
+        }, function () {
+            // none of the API calls succeeded
+        })
+    };
 
+    // get movie from a particular movie database.
     self.getMovies = function (moviesUrl, moviesDbtype) {
         var promise = $http.get(moviesUrl);
         promise.then(function (result) {
@@ -37,7 +39,8 @@ angular.module('moviesApp')
         return promise;
     };
 
-    self.getMoviesFromJson = function(movies){
-       return movies.data.Movies;
-    }
+    // parse the movies result and return json array of movies.
+    self.getMoviesFromJson = function (movies) {
+        return movies.data.Movies;
+    };
 });

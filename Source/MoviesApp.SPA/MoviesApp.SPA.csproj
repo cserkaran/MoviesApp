@@ -164,6 +164,7 @@
     <Content Include="Scripts\app\enums.js" />
     <Content Include="Scripts\app\moviesController.js" />
     <Content Include="Scripts\app\movieService.js" />
+    <Content Include="Scripts\app\moviesUrlService.js" />
     <Content Include="Scripts\app\types.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -144,6 +144,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\angular-material-icons.min.js" />
     <Content Include="Content\angular-material.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
@@ -151,6 +152,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.min.js" />
+    <Content Include="Scripts\angular-material-icons.min.js" />
     <Content Include="Scripts\angular-material.min.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\app\enums.js" />

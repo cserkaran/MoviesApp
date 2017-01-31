@@ -4,23 +4,40 @@
     <meta charset="utf-8" />
     <title>Book My Movie</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900' rel='stylesheet' type='text/css'>
     <script src="~/Scripts/angular.min.js" type="text/javascript"></script>
     <script src="~/Scripts/angular-animate.min.js" type="text/javascript"></script>
     <script src="~/Scripts/angular-aria.min.js" type="text/javascript"></script>
     <script src="~/Scripts/angular-material.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/angular-material-icons.min.js" type="text/javascript"></script>
     <script src="~/Scripts/promise.any.js" type="text/javascript"></script>
     <script src="~/Scripts/app/types.js" type="text/javascript"></script>
     <script src="~/Scripts/app/enums.js" type="text/javascript"></script>
     <script src="~/Scripts/app/moviesController.js" type="text/javascript"></script>
     <script src="~/Scripts/app/movieService.js" type="text/javascript"></script>
     <script src="~/Scripts/app/moviesUrlService.js" type="text/javascript"></script>
-
+   
     @Styles.Render("~/Content/css")
 </head>
-<body ng-cloak>
+<body layout="row" ng-cloak>
+    <div layout="column" flex>
+        <div>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <ng-md-icon id="toolBarIcon" icon="movie"
+                                style="fill: whitesmoke"
+                                size="64"></ng-md-icon>
+                    <h1>Book My Show</h1>
+                </div>
+            </md-toolbar>
+        </div>
+        <md-content id="content" flex>
+           {{movies.length}}
+        </md-content>
+    </div>
 
-    <h1>Book My Movie</h1>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
+
 </body>
 </html>

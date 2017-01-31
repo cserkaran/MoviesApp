@@ -23,7 +23,8 @@ namespace MoviesApp.SPA
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                   "~/Content/Site.css",
-                  "~/Content/angular-material.min.css"));
+                  "~/Content/angular-material.min.css",
+                  "~/Content/angular-material-icons.min.css"));
         }
     }
 }

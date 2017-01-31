@@ -39,3 +39,41 @@ textarea {
   width: 785px;
   height: 400px;
 }
+
+html,body{
+    font-family:'Roboto',sans-serif;
+    font-size:14px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+}
+
+.md-toolbar-tools{
+    background-color:tomato
+}
+
+md-toolbar .md-toolbar-tools h1{
+    font-size:1.250em;
+    font-weight:400;
+    padding-left:5px;
+    color:whitesmoke
+}
+
+md-list{
+    padding: 0px 0px 8px 0px;
+}
+
+#toolBarIcon{
+    padding-left:5px;
+    padding-right:5px;
+}
+
+#content{
+    padding-left:40px;
+    padding-right:40px;
+    padding-top:5px;
+    background-color:aquamarine;
+    
+}
+
+

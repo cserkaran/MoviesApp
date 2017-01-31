@@ -32,7 +32,11 @@
             </md-toolbar>
         </div>
         <md-content id="content" flex>
-           {{movies.length}}
+            <md-card ng-repeat="m in movies">
+                <md-card-content>
+                    {{m.movie.Title}}
+                </md-card-content>
+            </md-card>
         </md-content>
     </div>
 

@@ -6,6 +6,7 @@ app.controller('MoviesAppController', function ($scope, $http, MovieService, $ti
     MovieService.getAllMovies().then(function (movies)
     {
         $scope.movies = movies;
+        $scope.$apply()
     });
 
 });

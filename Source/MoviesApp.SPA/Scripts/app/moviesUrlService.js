@@ -9,9 +9,9 @@ angular.module('moviesApp')
     self.movieUrls = function () {
         var cinemaMoviesDbUrl = "/api/" + movieDatabaseTypes.Cinema;
         var filmMoviesDbUrl = "/api/" + movieDatabaseTypes.Film;
-        var urls = [];
-        urls.push(new MovieUrl(cinemaMoviesDbUrl,movieDatabaseTypes.Cinema));
-        urls.push(new MovieUrl(filmMoviesDbUrl,movieDatabaseTypes.Film));
+        var urls = {};
+        urls[movieDatabaseTypes.Cinema] = new MovieUrl(cinemaMoviesDbUrl, movieDatabaseTypes.Cinema);
+        urls[movieDatabaseTypes.Film] =(new MovieUrl(filmMoviesDbUrl, movieDatabaseTypes.Film));
         return urls;
     }
 });

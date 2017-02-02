@@ -32,10 +32,19 @@
             </md-toolbar>
         </div>
         <md-content id="content" flex>
-            <md-card ng-repeat="m in movies">
+            <md-card ng-repeat="movie in movies">
                 <md-card-content>
-                    {{m.movie.Title}}
+                    <div layout="row">
+                        <div flex="20" layout="column">
+                            <img src="~/images/{{movie.imageUrl}}.jpg" />
+                        </div>
+                        <div flex="80" flex-offset="5" layout="column">
+                            <span class="md-headline">{{movie.Title}}</span>
+                            <span class="md-subhead">{{movie.Year}}</span>
+                        </div>
+                    </div>
                 </md-card-content>
+
             </md-card>
         </md-content>
     </div>

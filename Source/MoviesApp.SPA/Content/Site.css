@@ -35,6 +35,10 @@ textarea {
     }
 }
 
+span{
+    margin-right: 10px;
+}
+
 .gridStyle {
   width: 785px;
   height: 400px;
@@ -59,12 +63,16 @@ md-toolbar .md-toolbar-tools h1{
     color:whitesmoke
 }
 
+md-headline,
+md-subhead{
+    
+}
 md-list{
     padding: 0px 0px 8px 0px;
 }
 
 md-card{
-    background-color:whitesmoke;
+    background-color:white;
 }
 
 
@@ -74,11 +82,15 @@ md-card{
 }
 
 #content{
-    padding-left:240px;
-    padding-right:240px;
     padding-top:5px;
-    background-color:white;
-    
+}
+
+#progressBar{
+    justify-content: center;
+}
+
+#loadingSpan{
+    margin-left:10px;
 }
 
 

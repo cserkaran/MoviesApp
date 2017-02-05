@@ -108,7 +108,13 @@ angular.module('moviesApp')
 
     self.SortResult = function () {
         // at least one of the API calls succeeded
-        return sortAssociativeArray(self.allMovies, self.movieSortByTitle);
+        var sortedArr = sortAssociativeArray(self.allMovies, self.movieSortByTitle);
+        var final = [];
+        for (var i in sortedArr) {
+            final.push(sortedArr[i]);
+        }
+
+        return final;
     }
 
 });

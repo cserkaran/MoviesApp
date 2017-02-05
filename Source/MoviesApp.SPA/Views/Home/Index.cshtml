@@ -32,7 +32,7 @@
             </md-toolbar>
         </div>
 
-        <md-content id="content" flex md-show="!loading" ng-show="!loading">
+        <md-content id="content" flex md-show="!loading" ng-show="!loading && !showError">
             <div layout="row">
                 <div layout="column" flex="70" flex-offset="15" flex-offset-xs="1">
                     <md-card ng-repeat="movie in movies">
@@ -79,11 +79,6 @@
                                     </div>
 
                                     <div layout="row">
-                                        <span class="md-subhead"><b>Awards:</b></span>
-                                        <span class="md-subhead">{{movie.Awards}}</span>
-                                    </div>
-
-                                    <div layout="row">
                                         <span class="md-subhead"><b>Best Available Price:</b></span>
                                         <span class="md-subhead">${{movie.Price}}</span>
                                     </div>
@@ -93,7 +88,6 @@
                         </md-card-content>
                     </md-card>
                 </div>
-                <div></div>
             </div>
         </md-content>
 
@@ -104,6 +98,20 @@
             <div layout="row" layout-align="center center" >
                 <md-progress-circular md-mode="indeterminate"></md-progress-circular>
                 <span class="md-headline" id="loadingSpan">Loading...</span>
+            </div>
+        </div>
+
+        <div id="errorPage" ng-show="showError">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="main">
+                <h1 class="errorHeading">Oops!Something went wrong.</h1>
+                <p class="errorText">We were not able to find any movie.
+                It looks like you're lost...<br />That's a trouble?</p>
+                <button type="button" class="pageRefresh" ng-click="reload()">Refresh</button>
             </div>
         </div>
 

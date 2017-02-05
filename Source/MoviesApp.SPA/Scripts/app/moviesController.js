@@ -16,7 +16,7 @@ app.controller('MoviesAppController', function ($scope, $http, MovieService, $ti
         $scope.$apply();
     }
 
-    //
+    // reload the page.
     $scope.reload = function () {
         location.reload();
     }

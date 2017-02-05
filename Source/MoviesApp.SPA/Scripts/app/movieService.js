@@ -1,11 +1,14 @@
 ﻿"use strict";
 angular.module('moviesApp')
 .service('MovieService', function ($http, $q, MoviesUrlService) {
+
     var self = this;
-   
     self.allMovies = {};
 
     // get all the movies with cheapest price from multiple movie databases.
+    // if a movie title is present in multiple provided databases, 
+    // the cheapest one will be picked. in case one of the provider is down,
+    // we pick the movie title available(irrespective of price in this case).
     self.getCheapestPricedMovies = function () {
 
         var movieUrls = MoviesUrlService.movieUrls();
@@ -83,15 +86,22 @@ angular.module('moviesApp')
         return movies.data.Movies;
     };
 
+    // parse the json to the movie detail object.
     self.getMovieDetailFromJson = function (movieDetail) {
         return movieDetail.data;
     };
 
+    // since i was not able to access the movie image from the 
+    // imdb url(got access denied), i have poster locally in the images folder.
+    // the poster name matches the movie title name,removing the Star Wars in this 
+    // case as i am assuming that all movies have star wars in the beginning of the title.
     self.getMovieImageUrl = function(title){
         var split = title.split(":");
         return split[1].trim();
     }
 
+    // sort the movies by title. Comparator logic to sort the 
+    // movies associative array.
     self.movieSortByTitle = function (movieA, movieB) {
         var titleA = movieA[1].toLowerCase();
         var titleB = movieB[1].toLowerCase();
@@ -106,6 +116,7 @@ angular.module('moviesApp')
         return 0;
     }
 
+    // get the sorted movies list and return a final movies array.
     self.SortResult = function () {
         // at least one of the API calls succeeded
         var sortedArr = sortAssociativeArray(self.allMovies, self.movieSortByTitle);

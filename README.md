@@ -13,5 +13,5 @@ Assumptions :
 Images were not accessible from the API do downloaded them locally. Assuming that all movie title's begin with name
 <b>Star Wars :<b>
 
-Also, go the Issues tab on https://github.com/cserkaran/MoviesApp/issues to check the main page and error page snapshots.
+Also, go to the Issues tab on https://github.com/cserkaran/MoviesApp/issues/1 to check the main page and error page snapshots.
 
